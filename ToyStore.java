@@ -49,3 +49,16 @@ public class ToyStore {
         for (int i = 0; i < arr3.length; i++) {
             store.addToy(arr3[i]);
         }
+         // Запись результатов в файл
+         try (FileWriter writer = new FileWriter("toys_output.txt")) {
+            for (int i = 0; i < 10; i++) {
+                Toy toy = store.getToy();
+                if (toy != null) {
+                    writer.write(toy.toString() + "\n");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
