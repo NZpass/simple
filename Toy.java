@@ -20,4 +20,14 @@ public class Toy {
     public int getWeight() {
         return weight;
     }
+
+    // Переопределяем toString() для удобства вывода информации о игрушке
+    @Override
+    public String toString() {
+        return "Toy{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
 }
